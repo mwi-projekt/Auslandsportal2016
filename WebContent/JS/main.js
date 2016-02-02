@@ -101,6 +101,7 @@ var main = function() {
 	});
 	//Click-Listener für Registrieren-Button
 	$('.btnReg').on('click', function() {
+		
 		var telefon, mobil, matrikelnummer, studiengang, kurs, pw1, pw2, standort;
 		telefon = '';
 		mobil = '';
@@ -112,6 +113,7 @@ var main = function() {
 		standort = '';
 		var rolle = $('.rolleWahl').val();
 		if (rolle === "Studierender") {
+			
 			pw1 = $('#inPwSt1').val();
 			pw2 = $('#inPwSt2').val();
 			matrikelnummer = $('#inMatrikel').val();
@@ -136,7 +138,20 @@ var main = function() {
 				$('.falsch').html("Bitte wählen sie nur Auslandsmitarbeiter, wenn sie einer sind.");
 			} else if (studiengang === "Studiengang*") {
 				$('.falsch').html("Bitte wählen Deinen Studiengang aus.");
-			} else {
+			} else if (vorname === "") {
+				$('.falsch').html("Bitte gebe einen Vornamen ein.");
+			} else if (nachname === "") {
+				$('.falsch').html("Bitte gebe einen Nachnamen ein.");
+			} else if (email === "") {
+				$('.falsch').html("Bitte gebe eine E-Mail ein.");
+			} else if (matrikelnummer === "") {
+				$('.falsch').html("Bitte gebe deine Matrikelnummer ein.");
+			} else if (kurs === "") {
+				$('.falsch').html("Bitte gebe deinen Kurs ein.");
+			} else if(pw1.length<7){
+				$('.falsch').html("Bitte gebe ein längeres Passwort ein.");
+			}
+			else { 
 				$.ajax({
 					type: "POST",
 					url: "login_db",

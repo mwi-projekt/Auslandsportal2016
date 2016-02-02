@@ -24,9 +24,9 @@ import javax.servlet.http.HttpServletResponse;
 public class DatenAusBewerbungsformular extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-    
+	
 	// JDBC driver name and database URL
-    final String DB_URL="jdbc:mysql://localhost:3306/mwi";
+    final String DB_URL="jdbc:mysql://193.196.7.215:3306/mwi";
 	// Database account
     final String USER = "mwi";
     final String PASS = "mwi2014";

@@ -13,7 +13,7 @@ import java.util.TimerTask;
 public class prozess_reports extends TimerTask {
 		//
 		//Database url and port
-		final String DB_URL="jdbc:mysql://localhost:3306/mwi";
+		final String DB_URL="jdbc:mysql://193.196.7.215:3306/mwi";
     	//
 		//Database account
     	final String USER = "mwi";
